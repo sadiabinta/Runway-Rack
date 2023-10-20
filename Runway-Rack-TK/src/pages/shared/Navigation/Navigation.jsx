@@ -6,7 +6,7 @@ import logo from '../../../assets/logo.jpg'
 
 const Navigation = () => {
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100 fixed z-10">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -24,8 +24,10 @@ const Navigation = () => {
         <li><a>Item 3</a></li>
       </ul>
     </div>
-    <img className="w-24" src={logo} alt="" />
-    <a className="btn btn-ghost normal-case text-2xl">Runway Rack</a>
+    <div className='md:flex'>
+    <img className="w-24 my-auto" src={logo} alt="" />
+    <a className="btn btn-ghost normal-case text-2xl my-auto">Runway Rack</a>
+    </div>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
