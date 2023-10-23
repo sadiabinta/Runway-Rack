@@ -1,5 +1,5 @@
 
-import {FaFacebook, FaRocketchat} from 'react-icons/fa';
+import { FaRocketchat} from 'react-icons/fa';
 const ContactCard = () => {
     return (
         <div className="md:flex justify-center gap-4">
