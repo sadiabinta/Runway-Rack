@@ -61,13 +61,13 @@ const MuiNavBar = () => {
         }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    <img src={logo} alt="Logo" style={{
+                    <img href="/" src={logo} alt="Logo" style={{
                         display: { xs: 'none', sm: 'block', md: 'flex' }, marginRight: '1rem', width:"100px",height:"auto"}} />
                     <Typography
                         variant="h6"
                         noWrap
                         component="a"
-                        href="#"
+                        href="/"
                         sx={{
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
