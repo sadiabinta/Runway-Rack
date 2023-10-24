@@ -1,27 +1,30 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
 
 
 const Login = () => {
     const { register, handleSubmit } = useForm();
     const [checked, setChecked] = useState(false);
 
+    const {signIn}=useContext(AuthContext);
 
     const onSubmit = data => {
         console.log(data);
-        // signIn(data.email, data.password)
-        //     .then(result => {
-        //         const user = result.user;
-        //         console.log(user);
-        //         const loggedUser={
-        //             email:user.email
-        //         }
+
+        signIn(data.email, data.password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                // const loggedUser={
+                //     email:user.email
+                // }
         //         console.log(loggedUser);
         
         //         navigate(from, {replace:true});
-        //     })
-        //     .catch(error => console.log(error))
+            })
+            .catch(error => console.log(error))
     };
     const handleCheck = () => {
         setChecked(!checked);
