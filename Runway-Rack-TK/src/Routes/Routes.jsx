@@ -16,11 +16,11 @@ import Register from "../pages/Register/Register";
             element:<Home></Home>
         },
         {
-          path:'login',
+          path:'/login',
           element:<Login></Login>
       },
       {
-        path:'register',
+        path:'/register',
         element:<Register></Register>
     }
       ]

@@ -1,0 +1,16 @@
+.css-1q39md6-MuiButtonBase-root-MuiButton-root {
+    
+  
+    color:goldenrod !important;
+   
+}
+
+
+
+@media (min-width: 900px) {
+ .css-1t6c9ts {
+        
+        display: flex;
+        justify-content: center !important;
+    }
+}
