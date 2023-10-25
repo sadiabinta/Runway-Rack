@@ -22,6 +22,8 @@ import {
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const defaultTheme = createTheme();
 const Register = () => {
@@ -33,15 +35,30 @@ const Register = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
-  const { user, createUser } = useContext(AuthContext);
+  const { user, createUser,updateUserProfile} = useContext(AuthContext);
+  const navigate=useNavigate();
 
   const onSubmit = (data) => {
+    console.log(data);
     setPass(data.password);
     setConfirmPass(data.confirmPassword);
     createUser(data.email, data.password)
       .then((result) => {
         const loggedUser = result.user;
         console.log("logged user", loggedUser);
+        updateUserProfile(data.firstName,data.photo,data.phone)
+        .then(()=>{
+          reset();
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Registration Successfull!',
+            showConfirmButton: false,
+            timer: 1500
+          })
+          navigate('/')
+        })
+        .catch(error=>console.log(error))
       })
       .catch((error) => console.log(error));
   };
