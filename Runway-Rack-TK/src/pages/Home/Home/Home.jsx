@@ -10,10 +10,7 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-<<<<<<< HEAD
-=======
             {/* <ContactCard></ContactCard> */}
->>>>>>> 60f63662118521443fff81b0a58babdd25c8bb08
             <DestinationBanner></DestinationBanner>
             <FilterDestinationCard></FilterDestinationCard>
             <Flightoption></Flightoption>
