@@ -1,10 +1,12 @@
 import ContactCard from "../ContactCard/ContactCard";
+import OfferDeals from "../OfferDeals";
 
 
 const Home = () => {
     return (
-        <div>
+        <div className="min-h-screen">
             <ContactCard></ContactCard>
+            <OfferDeals/>
         </div>
     );
 };
