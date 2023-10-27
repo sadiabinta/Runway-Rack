@@ -61,11 +61,13 @@ const MuiNavBar = () => {
 
 
     return (
-        <AppBar position="static" sx={{
+        <AppBar position="static" 
+        sx={{
             background: 'white', 
             boxShadow: 'none', 
             color:"black"
-        }}>
+        }}
+        >
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <img href="/" src={logo} alt="Logo" style={{
@@ -196,11 +198,11 @@ const MuiNavBar = () => {
                                     Login
                                 </Button>
                                 </Link>
-                                <Link to="/register">
+                                {/* <Link to="/register">
                                     <Button variant="outlined" color="error" sx={{ my: 2 }}>
                                         Register
                                     </Button>
-                                </Link>
+                                </Link> */}
                                 
                         </Box>
                     )}

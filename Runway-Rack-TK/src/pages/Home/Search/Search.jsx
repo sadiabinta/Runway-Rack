@@ -100,9 +100,11 @@ const Search = () => {
     console.log(data);
   };
   return (
+
     <Container sx={{ paddingY: 2 ,marginY:3 }} >
       <CssBaseline />
       <form  onSubmit={handleSubmit(onSubmit)}>
+
         <RadioGroup name="tripType" row>
           <FormControlLabel
             value="oneWay"
@@ -288,6 +290,7 @@ const Search = () => {
         </Box>
 
 
+
         <Box display="flex" justifyContent="space-between" my={2}>
           <div>
 
@@ -322,6 +325,8 @@ const Search = () => {
           </div>
           
          
+
+       
         </Box>
 
         <Box sx={{display:"flex",md: {direction:"column"}}}
