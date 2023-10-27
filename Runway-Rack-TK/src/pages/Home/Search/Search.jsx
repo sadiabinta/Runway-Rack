@@ -100,9 +100,11 @@ const Search = () => {
     console.log(data);
   };
   return (
-    <Container>
+
+    <Container sx={{ paddingY: 2 ,marginY:3 }} >
       <CssBaseline />
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form  onSubmit={handleSubmit(onSubmit)}>
+
         <RadioGroup name="tripType" row>
           <FormControlLabel
             value="oneWay"
@@ -288,31 +290,43 @@ const Search = () => {
         </Box>
 
 
-        <Box display="flex" justifyContent="space-between"my={2}>
-          <Controller
-            name="departingDate"
-            control={control}
-            render={({ field }) => (
-              <TextField
-                {...field}
-                label="Departing Date"
-                type="date"
-                variant="outlined"
-              />
-            )}
-          />
-          <Controller
-            name="returningDate"
-            control={control}
-            render={({ field }) => (
-              <TextField
-                {...field}
-                label="Returning Date"
-                type="date"
-                variant="outlined"
-              />
-            )}
-          />
+
+        <Box display="flex" justifyContent="space-between" my={2}>
+          <div>
+
+            <Typography variant="body1">Departing Date</Typography>
+            <Controller
+              name="departingDate"
+              control={control}
+              render={({ field }) => (
+                <TextField
+                  {...field}
+
+                  type="date"
+                  variant="outlined"
+                />
+              )}
+            />
+          </div>
+          <div>
+            <Typography variant="body1">Returning Date</Typography>
+            <Controller
+              name="returningDate"
+              control={control}
+              render={({ field }) => (
+                <TextField
+                  {...field}
+
+                  type="date"
+                  variant="outlined"
+                />
+              )}
+            />
+          </div>
+          
+         
+
+       
         </Box>
 
         <Box sx={{display:"flex",md: {direction:"column"}}}
