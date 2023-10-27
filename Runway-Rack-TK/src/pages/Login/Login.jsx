@@ -6,6 +6,8 @@ import { ThemeProvider } from "@emotion/react";
 import { Copyright } from "@mui/icons-material";
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { Avatar, Box, Button, Checkbox, CssBaseline, FormControlLabel, Grid, Link, Paper, TextField, Typography, createTheme } from "@mui/material";
+import Swal from "sweetalert2";
+import { useLocation, useNavigate } from "react-router-dom";
 
 
 const Login = () => {
@@ -14,6 +16,10 @@ const Login = () => {
     const [checked, setChecked] = useState(false);
 
     const {signIn}=useContext(AuthContext);
+    const navigate=useNavigate();
+    const location=useLocation();
+
+    const from=location.state?.from?.pathname ||'/';
 
     const onSubmit = data => {
         console.log(data);
@@ -22,6 +28,16 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                Swal.fire({
+                  title: 'Successfully Logged In',
+                  showClass: {
+                    popup: 'animate__animated animate__fadeInDown'
+                  },
+                  hideClass: {
+                    popup: 'animate__animated animate__fadeOutUp'
+                  }
+                })
+                navigate(from, {replace:true});
                 // const loggedUser={
                 //     email:user.email
                 // }
