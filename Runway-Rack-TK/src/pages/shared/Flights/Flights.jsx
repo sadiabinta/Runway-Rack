@@ -45,7 +45,7 @@ const Flights = () => {
                                             // 16:9
                                             pt: '56.25%',
                                         }}
-                                        image="https://img.freepik.com/free-photo/jumbo-jet-flying-sky_23-2150895699.jpg?t=st=1698001717~exp=1698005317~hmac=e23d794a845da4c3838affb6a54785430df4f9957a51f43d04d5dc5df722eee2&w=826"
+                                        image="https://img.freepik.com/free-photo/jumbo-jet-flying-sky_23-2150895699.jpg"
                                     />
                                     <CardContent sx={{ flexGrow: 1 }}>
                                         <Typography gutterBottom variant="h5" component="h2">

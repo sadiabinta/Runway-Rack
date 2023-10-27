@@ -22,25 +22,28 @@ const FilterDestinationCard = () => {
     return (
         <div>
             <CommonHeader smallCaption="FLYNEXT PACKAGE" largeCaption="Your Great Destination" textAlign="center"></CommonHeader>
-            <div style={{textAlign:"center"}} >
-                <Box sx={{ width: '100%', typography: 'body1' }}>
+
+
+            <div style={{ textAlign: "center" }} >
+                <Box sx={{ width: '100% ' }}>
                     <TabContext value={value}>
                         <Box sx={{
-                            borderBottom: 1, textAlign: "center", borderColor: 'divider', display: 'flex',
-                            justifyContent: 'center', }}>
+                            textAlign: "center", display: 'flex',
+                            justifyContent: 'center',
+                        }}>
                             <TabList sx={{
                                 width: "100%",
                                 mx: 'auto',
                                 display: 'flex',
                                 justifyContent: 'center', // Center-align the tab labels
-                               
+
                                 textAlign: 'center',
                                 alignItems: 'center'
-                                
+
                             }}
                                 onChange={handleChange}
                                 aria-label="lab API tabs example"
-                                >
+                            >
                                 <Tab label="Flight" value="1" />
                                 <Tab label="Car Rentals" value="2" />
                                 <Tab label="Texis" value="3" />
@@ -58,9 +61,13 @@ const FilterDestinationCard = () => {
                     </TabContext>
                 </Box>
             </div>
+            
         </div>
         
     );
 };
 
 export default FilterDestinationCard;
+
+
+
