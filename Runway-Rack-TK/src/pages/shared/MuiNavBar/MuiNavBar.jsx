@@ -198,11 +198,11 @@ const MuiNavBar = () => {
                                     Login
                                 </Button>
                                 </Link>
-                                {/* <Link to="/register">
+                                <Link to="/register">
                                     <Button variant="outlined" color="error" sx={{ my: 2 }}>
                                         Register
                                     </Button>
-                                </Link> */}
+                                </Link>
                                 
                         </Box>
                     )}
