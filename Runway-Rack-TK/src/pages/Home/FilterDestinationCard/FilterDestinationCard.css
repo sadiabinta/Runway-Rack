@@ -3,3 +3,7 @@
     display: flex;
     justify-content: center !important;
 }
+
+.css-13xfq8m-MuiTabPanel-root {
+    padding: 24px;
+}
