@@ -24,6 +24,7 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import SocialLogin from "../shared/SocialLogin/SocialLogin";
 
 const defaultTheme = createTheme();
 const Register = () => {
@@ -252,6 +253,7 @@ const Register = () => {
               >
                 Sign Up
               </Button>
+              <SocialLogin></SocialLogin>
               <Grid container justifyContent="flex-end">
                 <Grid item>
                   <Link href="/login" variant="body2">

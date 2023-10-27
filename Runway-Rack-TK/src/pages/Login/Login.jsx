@@ -8,6 +8,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { Avatar, Box, Button, Checkbox, CssBaseline, FormControlLabel, Grid, Link, Paper, TextField, Typography, createTheme } from "@mui/material";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
+import SocialLogin from "../shared/SocialLogin/SocialLogin";
 
 
 const Login = () => {
@@ -52,37 +53,6 @@ const Login = () => {
     }
     return (
   
-        //      <div className="">
-        //     <h2 className="text-3xl font-semibold text-center text-orange-950 mt-16">Please Login!</h2>
-        //     <form onSubmit={handleSubmit(onSubmit)} className="w-full">
-        //         <div className="form-control items-center">
-        //             <div className="form-control w-1/3  mx-16">
-        //                 <label className="label">
-        //                     <span className="label-text text-orange-950 text-xl font-semibold">Email*</span>
-        //                 </label>
-        //                 <input type="email" placeholder="Your Email Address" className="input input-bordered w-full bg-orange-100" {...register("email", { required: true })} />
-
-        //             </div>
-        //             <div className="form-control w-1/3  mx-16">
-        //                 <label className="label">
-        //                     <span className="label-text text-orange-950 text-xl font-semibold">Password*</span>
-        //                 </label>
-        //                 <input type={!checked ? "password" : "text"} placeholder="Password" className="input input-bordered w-full bg-orange-100" {...register("password", { required: true, minLength: 6 })} />
-        //             </div>
-        //             <div className="form-control">
-        //                 <label className="label cursor-pointer">
-        //                     <span className="label-text mr-8">Show Password</span>
-        //                     <input onChange={handleCheck} type="checkbox" checked={checked} className="checkbox" />
-        //                 </label>
-        //             </div>
-        //         </div>
-        //         <div className="form-control items-center">
-        //             <input type="submit" className="btn bg-orange-950 my-10 w-1/3 text-white" value='Login' />
-        //             {/* <SocialLogin></SocialLogin> */}
-        //         </div>
-        //         <p className="text-center">Not Registered? <Link className="text-orange-600" to='/register'>Create An Account</Link></p>
-        //     </form>
-        // </div>
         <ThemeProvider theme={defaultTheme}>
       <Grid container component="main" sx={{ height: '100vh'}}>
         <CssBaseline />
@@ -157,6 +127,7 @@ const Login = () => {
               >
                 Sign In
               </Button>
+              <SocialLogin></SocialLogin>
               <Grid container>
                 <Grid item xs>
                   <Link href="#" variant="body2">
