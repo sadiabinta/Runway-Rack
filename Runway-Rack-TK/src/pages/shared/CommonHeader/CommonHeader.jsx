@@ -1,9 +1,10 @@
 import { Typography } from '@mui/joy';
 import React from 'react';
+import './CommonHeader.css'
 
 const CommonHeader = ({ smallCaption, largeCaption, textAlign }) => {
     return (
-        <div style={{ textAlign: textAlign , padding:"30px 0 30px 0"}}>
+        <div style={{ textAlign: textAlign, padding:"30px 0 30px 0"}}>
             <Typography variant='danger' level='h5' sx={{color:"gold" ,my:"0px", letterSpacing:"2px"}} >
                 {smallCaption}
             </Typography>
