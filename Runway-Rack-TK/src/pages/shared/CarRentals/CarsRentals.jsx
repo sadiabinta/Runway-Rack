@@ -31,11 +31,11 @@ const CarsRentals = () => {
             <main>
                 {/* Hero unit */}
 
-                <Container sx={{ py: 8 }} maxWidth="md">
+                <Container sx={{ py: 8 }}>
                     {/* End hero unit */}
                     <Grid container spacing={4}>
                         {cards.map((card) => (
-                            <Grid item key={card} xs={12} sm={6} md={3}>
+                            <Grid item key={card} xs={12} sm={12} md={3}>
                                 <Card
                                     sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
                                 >
