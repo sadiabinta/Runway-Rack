@@ -1,4 +1,4 @@
-import ContactCard from "../ContactCard/ContactCard";
+
 import OfferDeals from "../OfferDeals";
 import Banner from "../Banner/Banner";
 import DestinationBanner from "../DestinationBanner/DestinationBanner";
@@ -14,7 +14,7 @@ const Home = () => {
 
         <div>
             <Banner></Banner>
-           <ContactCard></ContactCard> 
+           {/* <ContactCard></ContactCard>  */}
            <OfferDeals/>
             <DestinationBanner></DestinationBanner>
             <FilterDestinationCard></FilterDestinationCard>
