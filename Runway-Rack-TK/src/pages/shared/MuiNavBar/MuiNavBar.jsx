@@ -15,6 +15,9 @@ import AdbIcon from '@mui/icons-material/Adb';
 import logo from '../../../assets/logo.jpg';
 import './MuiNavBar.css';
 import { Link } from 'react-router-dom';
+import { useContext} from "react";
+import { AuthContext } from '../../../providers/AuthProvider';
+
 
 const pages = ['Products', 'Pricing', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -22,15 +25,19 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const MuiNavBar = () => {
 
+    const {user,logOut} = useContext(AuthContext);
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
-    const [loggedIn, setLoggedIn] = useState(false);
+    //const [loggedIn, setLoggedIn] = useState(false);
+
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
+        
     };
     const handleOpenUserMenu = (event) => {
         setAnchorElUser(event.currentTarget);
+        
     };
 
     const handleCloseNavMenu = () => {
@@ -47,9 +54,9 @@ const MuiNavBar = () => {
     };
 
     const handleLogout = () => {
-        // Handle user logout logic here
-        setLoggedIn(false);
-        handleCloseUserMenu();
+            logOut()
+            .then(()=>{})
+            .catch(error=>console.log(error));
     };
 
 
@@ -148,11 +155,13 @@ const MuiNavBar = () => {
                         ))}
                     </Box>
 
-                    {loggedIn ? (
+                    {
+                    user ? (
                         <Box sx={{ flexGrow: 0 }}>
                             <Tooltip title="Open settings">
+                                <Typography marginRight={2} variant='span'>{user.displayName}</Typography>
                                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                    <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                                    <Avatar alt="Remy Sharp" src={user.photoURL} />
                                 </IconButton>
                             </Tooltip>
                             <Menu
@@ -175,7 +184,7 @@ const MuiNavBar = () => {
                                 onClose={handleCloseUserMenu}
                             >
                                 {settings.map((setting) => (
-                                    <MenuItem key={setting} onClick={handleCloseUserMenu} sx={{ color: 'black' }} >
+                                    <MenuItem key={setting} onClick={setting === 'Logout' ? handleLogout : handleCloseUserMenu} sx={{ color: 'black' }} >
                                         <Typography textAlign="center">{setting}</Typography>
                                     </MenuItem>
                                 ))}
